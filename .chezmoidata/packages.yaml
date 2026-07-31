@@ -1,0 +1,96 @@
+packages:
+  fedora:
+    rpm:
+    # nvidia
+    - 'akmod-nvidia'
+    - 'xorg-x11-drv-nvidia-cuda'
+    - 'xorg-x11-drv-nvidia-cuda-libs'
+    - 'xorg-x11-drv-nvidia-power'
+    - 'libva-nvidia-driver'
+    - 'libva-utils'
+    - 'vdpauinfo'
+
+    # creation
+    - 'blender'
+    - 'kdenlive'
+    - 'inkscape'
+    - 'digikam'
+    - 'darktable'
+    - 'gimp'
+    - 'obs'
+    - 'fontforge'
+    - 'krita'
+    - 'godot'
+
+    # games
+    - 'steam'
+    - 'lutris'
+    - 'gamemode'
+    - 'prismlauncher'
+
+    # emulation
+    - 'dolphin-emu'
+    - 'snes9x-gtk'
+    - 'rpcs3'
+
+    # media
+    - 'vlc'
+    - 'yt-dlp'
+    - 'deno'
+    - 'handbrake-gui'
+    - 'kontrast'
+    - 'optiimage'
+    - 'ffmpeg'
+    - 'vulkan'
+    - 'pdftk'
+    - 'qview'
+    - 'picard'
+    - 'puddletag'
+
+    # utilities
+    - 'flatseal'
+    - 'fastfetch'
+    - 'inxi'
+    - 'syncthing'
+    - 'syncthingtray-qt6'
+    - 'syncthingplasmoid-qt6'
+    - 'syncthingfileitemaction-qt6'
+    - 'krename'
+    - 'meld'
+    - 'exiftool'
+    - 'rclone'
+    - 'tealdeer'
+    - 'agrep'
+    - 'age'
+
+    # system
+    - 'opentabletdriver'
+    - 'kitty'
+    - 'kup-backup'
+    - 'bup'
+    - 'python-pyxattr'
+    - 'par2'
+
+    # documents
+    - 'zim'
+
+    # web
+    - 'thunderbird'
+    - 'ktorrent'
+    - 'vesktop'
+    - 'signal-desktop'
+
+    # development
+    - 'gh'
+    - 'kate'
+    - 'zed'
+    - 'libtree-sitter-cpp'
+    - 'nodejs-bash-language-server'
+    - 'clang-devel'
+    - 'mock'
+
+    # fonts adobe-source-han-serif-jp-fonts adobe-source-han-sans-jp-fonts adobe-source-han-code-jp-fonts firacode-nerd-fonts julietaula-montserrat-fonts vernnobile-oswald-fonts lato-fonts fontsquirrel-crete-round-fonts impallari-raleway-fonts google-roboto-fonts tlwg-purisa-fonts steinberg-petalumascript-fonts opendyslexic-fonts dejavu-fonts-all
+
+    appimage:
+     - 'freecad'
+     - 'logseq'

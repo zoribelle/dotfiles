@@ -1,0 +1,18 @@
+.local/share/applications/org.kde.krita.desktop
+{{ if eq .chezmoi.hostname "akai-yoga" -}}
+# Not required for the Akai Yoga machine
+.config/OpenTabletDriver
+.config/dolphin-emu
+.config/rpcs3
+.local/share/applications
+.local/share/dolphin-emu
+Applications/Configs
+Applications/Lutris
+# ToDo templates
+.config/kdeconnect
+.config/kuprc
+.config/kwinrc
+.config/mimeapps.list
+.config/plasma-org.kde.plasma.desktop-appletsrc
+.config/powerdevilrc
+{{- end }}

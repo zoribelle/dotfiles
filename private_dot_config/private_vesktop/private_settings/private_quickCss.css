@@ -1,0 +1,53 @@
+.button_dd4f85[aria-label="Start an Activity"]{ 
+    display: none; 
+}
+
+
+/* Remove the new reaction buttons and forward button from messages*/
+div[class^="buttonContainer"]>div>div {
+    >div[aria-label^="Click to react with"],
+    >div[aria-label^="Click to remove"],
+    >div[aria-label^="Forward"]{
+        display: none;
+    }
+}
+
+
+.footer__214dc{
+    width: 0%;
+    margin-left: 0%;
+    visibility: hidden;
+    height: 0% 
+}
+
+div[class^="channelAppLauncher_e6e74f"]{
+    display: none;
+}
+
+/* Remove the gift button  from the message bar */
+button[aria-label="Send a gift"] {
+    display: none;
+}
+
+/* Remove the 'activities' section of the member list */
+[class^='membersGroup']:has([role=button]),
+[class^='member'] [class^='container']:has([class*='badges']) {
+    display: none;
+}
+
+/* Remove the 'app launcher' button from the message bar */
+.channelAppLauncher_df39bd {
+    display: none;
+}
+
+/* Remove the 'Edit with apps' button from images */
+.hoverButtonGroup__06ab4>[aria-label="Edit Image with Apps"]{
+    display:none;
+}
+
+/* Removes the new layout's App button */
+button[aria-label="Apps"] {
+    display: none;
+}
+
+/* Removes the new layout's help button */
