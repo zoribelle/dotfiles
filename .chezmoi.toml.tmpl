@@ -1,11 +1,11 @@
 encryption = "age"
 [age]
-    identity = "{{ .chezmoi.homeDir }}/Documents/dot-secret"
+    identity = "~/Documents/dot-secret"
 	recipient = "age103wg8h9cec82kja8wdrcw4jmz0xzy3vwe0af3nm4ccchdqqzwdnss52qml"
 [merge]
     command = 'meld'
 [diff]
 	command = "meld"
 [edit]
-	#command = "zed"
-	command = "nvim"
+	command = "zed"
+	args = "--wait"

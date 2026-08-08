@@ -3,29 +3,30 @@ packages:
     rpm:
     # nvidia
     - 'akmod-nvidia'
-    - 'xorg-x11-drv-nvidia-cuda'
-    - 'xorg-x11-drv-nvidia-cuda-libs'
-    - 'xorg-x11-drv-nvidia-power'
     - 'libva-nvidia-driver'
     - 'libva-utils'
     - 'vdpauinfo'
+    - 'xorg-x11-drv-nvidia-cuda'
+    - 'xorg-x11-drv-nvidia-cuda-libs'
+    - 'xorg-x11-drv-nvidia-power'
 
     # creation
     - 'blender'
-    - 'kdenlive'
-    - 'inkscape'
-    - 'digikam'
     - 'darktable'
-    - 'gimp'
-    - 'obs'
+    - 'digikam'
     - 'fontforge'
+    #- 'gimp'
+    #- 'godot'
+    - 'inkscape'
+    - 'kdenlive'
     - 'krita'
-    - 'godot'
+    - 'obs'
 
     # games
     - 'steam'
     - 'lutris'
     - 'gamemode'
+    - 'mangohud'
     - 'prismlauncher'
 
     # emulation
@@ -34,42 +35,46 @@ packages:
     - 'rpcs3'
 
     # media
-    - 'vlc'
-    - 'yt-dlp'
-    - 'deno'
+    - 'ffmpeg'
     - 'handbrake-gui'
     - 'kontrast'
     - 'optiimage'
-    - 'ffmpeg'
-    - 'vulkan'
     - 'pdftk'
-    - 'qview'
     - 'picard'
     - 'puddletag'
+    - 'qview'
+    - 'vlc'
+    - 'vulkan'
+    - 'yt-dlp'
+    # media-dependencies
+    - 'deno'
 
     # utilities
-    - 'flatseal'
+    - 'age'
+    - 'agrep'
+    - 'exiftool'
     - 'fastfetch'
-    - 'inxi'
-    - 'syncthing'
-    - 'syncthingtray-qt6'
-    - 'syncthingplasmoid-qt6'
-    - 'syncthingfileitemaction-qt6'
+    - 'flatseal'
+    - 'glow'
+    #- 'inxi'
     - 'krename'
     - 'meld'
-    - 'exiftool'
     - 'rclone'
+    - 'syncthing'
+    - 'syncthingfileitemaction-qt6'
+    - 'syncthingplasmoid-qt6'
+    - 'syncthingtray-qt6'
     - 'tealdeer'
-    - 'agrep'
-    - 'age'
+    - 'wol'
 
     # system
-    - 'opentabletdriver'
+    - 'bup'
     - 'kitty'
     - 'kup-backup'
-    - 'bup'
-    - 'python-pyxattr'
+    - 'opentabletdriver'
     - 'par2'
+    - 'plymouth-kcm'
+    - 'python-pyxattr'
 
     # documents
     - 'zim'
@@ -78,7 +83,8 @@ packages:
     - 'thunderbird'
     - 'ktorrent'
     - 'vesktop'
-    - 'signal-desktop'
+    - 'nheko'
+    #- 'signal-desktop'
 
     # development
     - 'gh'
@@ -91,6 +97,49 @@ packages:
 
     # fonts adobe-source-han-serif-jp-fonts adobe-source-han-sans-jp-fonts adobe-source-han-code-jp-fonts firacode-nerd-fonts julietaula-montserrat-fonts vernnobile-oswald-fonts lato-fonts fontsquirrel-crete-round-fonts impallari-raleway-fonts google-roboto-fonts tlwg-purisa-fonts steinberg-petalumascript-fonts opendyslexic-fonts dejavu-fonts-all
 
+    delete:
+    - dragon
+    - gwenview
+    - kmahjongg
+    - kmines
+    - kpat
+    - kwrite
+    - neochat
+
     appimage:
-     - 'freecad'
-     - 'logseq'
+    - freecad
+    - logseq
+
+    dnfRepo:
+    - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
+    - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+      # sudo dnf install --nogpgcheck --repofrompath
+    - "terra,https://repos.fyralabs.com/terra$releasever"
+    - "https://download.opensuse.org/repositories/home:/mkittler/Fedora_$(rpm -E %fedora)/home:mkittler.repo"
+
+    copr:
+    - "lizardbyte/stable" # Sunshine
+    - "errornointernet/quickshell"
+    - "ilyaz/LACT"
+    - "luwxs/input-actions-editor"
+
+  addons:
+    blender:
+    - "EdgeFlow"
+    - "PolyQuilt_Fork"
+    - "auto_mirror"
+    - "auto_reload"
+    - "bone_widget"
+    - "brushstroke_tools"
+    - "curve_tools"
+    - "extra_curve_objectes"
+    - "f2"
+    - "looptools"
+    - "magic_uv"
+    - "measureit"
+    - "mio3_uv"
+    - "simple_renaming_panel"
+    krita:
+    - "Cellosia/krita-arrange-2"
+    - "madjyc/Krita_Tile_Grid_Plugin"
+    - "wojtryb/Shortcut-Composer"
