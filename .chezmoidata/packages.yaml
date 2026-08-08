@@ -1,96 +1,248 @@
 packages:
   fedora:
+    groups:
+      akaiyoga:
+      - creation
+      - dev
+      - files
+      - fonts
+      - media
+      - customization
+      #- repoless
+      - utilities
+      - web
+      katana:
+      - nvidia       # for Nvidia systems
+      - other        # temporal
+      - games        # for Power systems
+      - external     # for Power systems
+      - creation
+      - dev
+      - files
+      - fonts
+      - media
+      - customization
+      #- repoless
+      - utilities
+      - web
+
     rpm:
-    # nvidia
-    - 'akmod-nvidia'
-    - 'xorg-x11-drv-nvidia-cuda'
-    - 'xorg-x11-drv-nvidia-cuda-libs'
-    - 'xorg-x11-drv-nvidia-power'
-    - 'libva-nvidia-driver'
-    - 'libva-utils'
-    - 'vdpauinfo'
+      nvidia:
+      - akmod-nvidia
+      - libva-nvidia-driver
+      - xorg-x11-drv-nvidia-cuda
+      - xorg-x11-drv-nvidia-cuda-libs
+      - xorg-x11-drv-nvidia-power
 
-    # creation
-    - 'blender'
-    - 'kdenlive'
-    - 'inkscape'
-    - 'digikam'
-    - 'darktable'
-    - 'gimp'
-    - 'obs'
-    - 'fontforge'
-    - 'krita'
-    - 'godot'
+      other:
+      - opentabletdriver
+      #- sunshine
 
-    # games
-    - 'steam'
-    - 'lutris'
-    - 'gamemode'
-    - 'prismlauncher'
+      creation:
+      #- ardour9
+      - blender
+      #- blockbench
+      - darktable
+      - digikam
+      - fontforge
+      #- gimp
+      #- godot
+      - inkscape
+      #- kdenlive
+      - krita
+      - obs
+      #- scribus
 
-    # emulation
-    - 'dolphin-emu'
-    - 'snes9x-gtk'
-    - 'rpcs3'
+      media:
+      #- audacity
+      #- calibre
+      - exiftool
+      - ffmpeg dav1d
+      - handbrake-gui
+      - isoimagewriter
+      #- kooha
+      - kontrast
+      - optiimage
+      - pdftk
+      - picard
+      - puddletag
+      - qview
+      - vlc
+      - vulkan libva-utils vdpauinfo
+      - yt-dlp deno
 
-    # media
-    - 'vlc'
-    - 'yt-dlp'
-    - 'deno'
-    - 'handbrake-gui'
-    - 'kontrast'
-    - 'optiimage'
-    - 'ffmpeg'
-    - 'vulkan'
-    - 'pdftk'
-    - 'qview'
-    - 'picard'
-    - 'puddletag'
+      games:
+      - steam
+      #- lutris
+      - gamemode
+      - mangohud
+      - prismlauncher
+      - protonplus
+      ## emulation ##
+      - dolphin-emu
+      #- mednafen
+      - rpcs3
+      - snes9x-gtk
 
-    # utilities
-    - 'flatseal'
-    - 'fastfetch'
-    - 'inxi'
-    - 'syncthing'
-    - 'syncthingtray-qt6'
-    - 'syncthingplasmoid-qt6'
-    - 'syncthingfileitemaction-qt6'
-    - 'krename'
-    - 'meld'
-    - 'exiftool'
-    - 'rclone'
-    - 'tealdeer'
-    - 'agrep'
-    - 'age'
+      utilities:
+      - age
+      - agrep
+      #- bitwarden-cli
+      - createrepo_c
+      #- DisplayCAL
+      - fastfetch
+      - glow
+      #- inxi
+      - kcron
+      - kitty
+      - qalculate-qt
+      - starship
+      - tealdeer
+      - waydroid
+      - waydroid-helper vte291-gtk4 python3-httpx python3-aiofiles
+      - wol
 
-    # system
-    - 'opentabletdriver'
-    - 'kitty'
-    - 'kup-backup'
-    - 'bup'
-    - 'python-pyxattr'
-    - 'par2'
+      external:
+      - "@virtualization"
+      - bottles
+      - bridge-utils
+      #- distrobox
+      #- flatseal
+      - edk2-ovmf
+      - swtpm
+      - virtiofsd
 
-    # documents
-    - 'zim'
+      customization:
+      - fcitx5-mozc kcm-fcitx5
+      #- openrgb
+      - plasma-oxygen
+      - plasma-smart-video-wallpaper-reborn
+      - plasma-union
+      - plymouth-kcm
+      #- quickshell
+      - sl
 
-    # web
-    - 'thunderbird'
-    - 'ktorrent'
-    - 'vesktop'
-    - 'signal-desktop'
+      files:
+      - chezmoi
+      #- filezilla
+      - kio-snapshot
+      - krename
+      - kup-backup bup par2 python-pyxattr
+      - meld
+      - rclone
+      - syncthing
+      - syncthingfileitemaction-qt6
+      - syncthingplasmoid-qt6
+      - syncthingtray-qt6
+      - yazi
+      - zim
 
-    # development
-    - 'gh'
-    - 'kate'
-    - 'zed'
-    - 'libtree-sitter-cpp'
-    - 'nodejs-bash-language-server'
-    - 'clang-devel'
-    - 'mock'
+      web:
+      - discord
+      - ktorrent
+      - nheko
+      #- postybird
+      #- signal-desktop
+      - thunderbird
+      #- vesktop
 
-    # fonts adobe-source-han-serif-jp-fonts adobe-source-han-sans-jp-fonts adobe-source-han-code-jp-fonts firacode-nerd-fonts julietaula-montserrat-fonts vernnobile-oswald-fonts lato-fonts fontsquirrel-crete-round-fonts impallari-raleway-fonts google-roboto-fonts tlwg-purisa-fonts steinberg-petalumascript-fonts opendyslexic-fonts dejavu-fonts-all
+      dev:
+      - clang-devel
+      #- git-crypt
+      - gh
+      - kate
+      - libtree-sitter-cpp
+      #- mock
+      - neovim
+      - nodejs-bash-language-server
+      - zed
+
+      repoless:
+      #- appimagelauncher
+      - dnf-ui
+      - rustdesk
+      #- upscayl
+      #- winboat
+
+      fonts:
+      - adobe-source-han-code-jp-fonts
+      - adobe-source-han-sans-jp-fonts
+      - adobe-source-han-serif-jp-fonts
+      - ipa-exgothic-fonts
+      - ipa-exmincho-fonts
+      - dejavu-fonts-all
+      - firacode-nerd-fonts
+      - fontsquirrel-crete-round-fonts
+      - google-roboto-fonts
+      - impallari-raleway-fonts
+      - julietaula-montserrat-fonts
+      - lato-fonts
+      - mini-wakuwaku-fonts
+      - opendyslexic-fonts
+      - steinberg-petalumascript-fonts
+      - tlwg-purisa-fonts
+      - vernnobile-oswald-fonts
+      # Missing
+      #- serafettin-cartoon-fonts
+
+    delete:
+    - dragon
+    - ibus
+    - kcalc
+    - kmahjongg
+    - kmines
+    - kpat
+    - kwrite
+    - neochat
+    - fedora-bookmarks
 
     appimage:
-     - 'freecad'
-     - 'logseq'
+    - azahar-enhanced
+    - beeref
+    - drawpile
+    - dusklight
+    - eden
+    - freecad
+    - logseq
+    - lossless-cut
+    - moonlight
+    #- nx-optimizer
+    - opengoal
+    - melonds-enhanced
+    - orcaslicer
+    #- tinywii-backup-manager
+    #- wiiu-downloader
+
+    dnfRepo:
+    - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
+    - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+      # sudo dnf install --nogpgcheck --repofrompath
+    - "terra,https://repos.fyralabs.com/terra$releasever"
+    - "https://download.opensuse.org/repositories/home:/mkittler/Fedora_$(rpm -E %fedora)/home:mkittler.repo"
+
+    copr:
+    - "lizardbyte/stable" # Sunshine
+    - "errornointernet/quickshell"
+    #- "ilyaz/LACT"
+    #- "luwxs/input-actions-editor"
+
+  addons:
+    blender:
+    - "EdgeFlow"
+    - "PolyQuilt_Fork"
+    - "auto_mirror"
+    - "auto_reload"
+    - "bone_widget"
+    - "brushstroke_tools"
+    - "curve_tools"
+    - "extra_curve_objectes"
+    - "f2"
+    - "looptools"
+    - "magic_uv"
+    - "measureit"
+    - "mio3_uv"
+    - "simple_renaming_panel"
+    krita:
+    - "Cellosia/krita-arrange-2"
+    - "madjyc/Krita_Tile_Grid_Plugin"
+    - "wojtryb/Shortcut-Composer"

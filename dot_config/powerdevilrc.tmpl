@@ -1,0 +1,27 @@
+[AC][Performance]
+{{- if eq .chezmoi.hostname "akai-yoga" }}
+PowerProfile=balanced
+{{- else -}}
+PowerProfile=performance
+{{- end }}
+
+[AC][SuspendAndShutdown]
+AutoSuspendAction=0
+
+[Activities][18615133-a39b-4d66-9133-2ce868a54002]
+InhibitScreenManagement=false
+InhibitSuspend=false
+
+[Activities][2cfd14b6-e839-4ed6-87f2-6ab529c11d08]
+InhibitScreenManagement=false
+InhibitSuspend=false
+
+[Activities][f97dcbea-d4c7-4a4d-ad70-cee1c84eb24c]
+InhibitScreenManagement=false
+InhibitSuspend=false
+
+[Battery][Performance]
+PowerProfile=balanced
+
+[LowBattery][Performance]
+PowerProfile=power-saver

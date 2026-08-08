@@ -1,0 +1,23 @@
+{
+  "WPFInstall": [],
+  "Install": [],
+  "WPFTweaks": [
+    "WPFTweaksRemoveHome",
+    "WPFTweaksUTC",
+    "WPFTweaksStorage",
+    "WPFTweaksServices",
+    "WPFTweaksPowershell7Tele",
+    "WPFTweaksWidget",
+    "WPFTweaksRightClickMenu",
+    "WPFTweaksRazerBlock",
+    "WPFTweaksTelemetry",
+    "WPFTweaksDisableExplorerAutoDiscovery",
+    "WPFTweaksRemoveGallery",
+    "WPFTweaksActivity",
+    "WPFTweaksConsumerFeatures",
+    "WPFTweaksEndTaskOnTaskbar",
+    "WPFTweaksDisableBGapps",
+    "WPFTweaksBlockAdobeNet"
+  ],
+  "WPFFeature": []
+}

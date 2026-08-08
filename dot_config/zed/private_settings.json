@@ -1,0 +1,64 @@
+{
+  "icon_theme": "Zed (Default)",
+  "ui_font_family": ".ZedSans",
+  "buffer_line_height": "comfortable",
+  "buffer_font_family": "FiraCode Nerd Font",
+  "terminal": {
+    "font_family": "FiraCode Nerd Font"
+  },
+  "soft_wrap": "editor_width",
+  "restore_on_startup": "launchpad",
+  "vim_mode": true,
+  "relative_line_numbers": "enabled",
+  "cursor_shape": "block",
+  "auto_update": false,
+  "auto_install_extensions": {
+    "html": false,
+    "lua": true,
+    "make": true,
+    "toml": true,
+    "rlsp-yaml": true,
+    "xml": false
+  },
+  "proxy": "",
+  "project_panel": {
+    "dock": "left",
+    "hide_root": true,
+    "diagnostic_badges": true,
+    "sticky_scroll": true
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "openai-subscribed",
+      "model": "gpt-6-luna",
+      "enable_thinking": true,
+      "effort": "medium"
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "disable_ai": true,
+  "session": {
+    "restore_unsaved_buffers": true,
+    "trust_all_worktrees": true
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 16.0,
+  "theme": {
+    "mode": "light",
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Dark"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "always_split": false,
+  "mount_point": "/run/media/zorib/SD-AROMA",
+  "remove_sources_apps": false,
+  "remove_sources_games": false,
+  "scrub_update_partition": false,
+  "sort_by": "name_ascending",
+  "view_as": "grid",
+  "wii_ip": "192.168.1.100",
+  "txt_codes_source": "web_archive",
+  "theme_preference": "light",
+  "wii_output_format": "wbfs",
+  "gc_output_format": "iso",
+  "known_drives": [
+    "",
+    "/run/media/zorib/SD-AROMA"
+  ],
+  "preferred_language": "english"
+}

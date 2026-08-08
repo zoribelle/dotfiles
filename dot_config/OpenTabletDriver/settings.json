@@ -1,0 +1,151 @@
+{
+  "Revision": "0.6.7",
+  "Profiles": [
+    {
+      "Tablet": "Huion H951P",
+      "OutputMode": {
+        "Path": "OpenTabletDriver.Desktop.Output.LinuxArtistMode",
+        "Settings": [],
+        "Enable": true
+      },
+      "Filters": [],
+      "AbsoluteModeSettings": {
+        "Display": {
+          "Width": 1920.0,
+          "Height": 1080.0,
+          "X": 960.0,
+          "Y": 540.00006,
+          "Rotation": 0.0
+        },
+        "Tablet": {
+          "Width": 221.0,
+          "Height": 124.3125,
+          "X": 110.5,
+          "Y": 62.15625,
+          "Rotation": 0.0
+        },
+        "EnableClipping": true,
+        "EnableAreaLimiting": false,
+        "LockAspectRatio": true
+      },
+      "RelativeModeSettings": {
+        "XSensitivity": 10.0,
+        "YSensitivity": 10.0,
+        "RelativeRotation": 0.0,
+        "RelativeResetDelay": "00:00:00.1000000"
+      },
+      "Bindings": {
+        "TipActivationThreshold": 1.0,
+        "TipButton": {
+          "Path": "OpenTabletDriver.Desktop.Binding.AdaptiveBinding",
+          "Settings": [
+            {
+              "Property": "Binding",
+              "Value": "Tip"
+            }
+          ],
+          "Enable": true
+        },
+        "EraserActivationThreshold": 1.0,
+        "EraserButton": {
+          "Path": "OpenTabletDriver.Desktop.Binding.AdaptiveBinding",
+          "Settings": [
+            {
+              "Property": "Binding",
+              "Value": "Eraser"
+            }
+          ],
+          "Enable": true
+        },
+        "PenButtons": [
+          {
+            "Path": "OpenTabletDriver.Desktop.Binding.AdaptiveBinding",
+            "Settings": [
+              {
+                "Property": "Binding",
+                "Value": "Button 2"
+              }
+            ],
+            "Enable": true
+          },
+          {
+            "Path": "OpenTabletDriver.Desktop.Binding.AdaptiveBinding",
+            "Settings": [
+              {
+                "Property": "Binding",
+                "Value": "Button 1"
+              }
+            ],
+            "Enable": true
+          }
+        ],
+        "AuxButtons": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "MouseButtons": [],
+        "MouseScrollUp": null,
+        "MouseScrollDown": null,
+        "WheelBindings": [
+          {
+            "WheelButtons": [],
+            "ClockwiseRotation": {
+              "Path": "OpenTabletDriver.Desktop.Binding.MouseScrollBinding",
+              "Settings": [
+                {
+                  "Property": "Direction",
+                  "Value": "Vertical"
+                },
+                {
+                  "Property": "Amount",
+                  "Value": 120
+                },
+                {
+                  "Property": "Interval",
+                  "Value": 300
+                }
+              ],
+              "Enable": true
+            },
+            "ClockwiseActivationThreshold": 30.0,
+            "CounterClockwiseRotation": {
+              "Path": "OpenTabletDriver.Desktop.Binding.MouseScrollBinding",
+              "Settings": [
+                {
+                  "Property": "Direction",
+                  "Value": "Vertical"
+                },
+                {
+                  "Property": "Amount",
+                  "Value": 120
+                },
+                {
+                  "Property": "Interval",
+                  "Value": 300
+                }
+              ],
+              "Enable": true
+            },
+            "CounterClockwiseActivationThreshold": 30.0,
+            "StepSize": 30.0
+          }
+        ],
+        "DisablePressure": false,
+        "DisableTilt": false,
+        "EnableDragBindings": false
+      }
+    }
+  ],
+  "LockUsableAreaDisplay": true,
+  "LockUsableAreaTablet": true,
+  "Tools": []
+}
