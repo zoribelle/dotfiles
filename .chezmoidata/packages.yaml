@@ -1,101 +1,175 @@
 packages:
   fedora:
+    groups:
+    - nvidia   # for Nvidia systems
+    - backups  # for Main systems
+    - other    # temporal
+    - games    # for Power systems
+    - externalApps # for Power systems
+    - creation
+    - dev
+    - files
+    - fonts
+    - media
+    - customization
+    - repoless
+    - utilities
+    - web
+
     rpm:
-    # nvidia
-    - 'akmod-nvidia'
-    - 'libva-nvidia-driver'
-    - 'libva-utils'
-    - 'vdpauinfo'
-    - 'xorg-x11-drv-nvidia-cuda'
-    - 'xorg-x11-drv-nvidia-cuda-libs'
-    - 'xorg-x11-drv-nvidia-power'
+      nvidia:
+      - akmod-nvidia
+      - libva-nvidia-driver
+      - xorg-x11-drv-nvidia-cuda
+      - xorg-x11-drv-nvidia-cuda-libs
+      - xorg-x11-drv-nvidia-power
 
-    # creation
-    - 'blender'
-    - 'darktable'
-    - 'digikam'
-    - 'fontforge'
-    #- 'gimp'
-    #- 'godot'
-    - 'inkscape'
-    - 'kdenlive'
-    - 'krita'
-    - 'obs'
+      other:
+      - opentabletdriver
+      - qview
+      - sunshine
 
-    # games
-    - 'steam'
-    - 'lutris'
-    - 'gamemode'
-    - 'mangohud'
-    - 'prismlauncher'
+      creation:
+      #- ardour9
+      - blender
+      - darktable
+      - digikam
+      - fontforge
+      #- gimp
+      #- godot
+      - inkscape
+      #- kdenlive
+      #- scribus
+      - krita
+      - obs
 
-    # emulation
-    - 'dolphin-emu'
-    - 'snes9x-gtk'
-    - 'rpcs3'
+      media:
+      #- audacity
+      - exiftool
+      - ffmpeg
+      #- isoimagewriter
+      - handbrake-gui
+      - kontrast
+      - optiimage
+      - pdftk
+      - picard
+      - puddletag
+      - vlc
+      - vulkan
+      - yt-dlp
+      ## dependencies ##
+      - deno
+      - libva-utils
+      - vdpauinfo
+      #- calibre
+      #- kooha
 
-    # media
-    - 'ffmpeg'
-    - 'handbrake-gui'
-    - 'kontrast'
-    - 'optiimage'
-    - 'pdftk'
-    - 'picard'
-    - 'puddletag'
-    - 'qview'
-    - 'vlc'
-    - 'vulkan'
-    - 'yt-dlp'
-    # media-dependencies
-    - 'deno'
+      games:
+      - steam
+      #- lutris
+      - gamemode
+      - mangohud
+      - prismlauncher
+      - protonplus
+      ## emulation ##
+      - dolphin-emu
+      #- mednafen
+      - rpcs3
+      - snes9x-gtk
 
-    # utilities
-    - 'age'
-    - 'agrep'
-    - 'exiftool'
-    - 'fastfetch'
-    - 'flatseal'
-    - 'glow'
-    #- 'inxi'
-    - 'krename'
-    - 'meld'
-    - 'rclone'
-    - 'syncthing'
-    - 'syncthingfileitemaction-qt6'
-    - 'syncthingplasmoid-qt6'
-    - 'syncthingtray-qt6'
-    - 'tealdeer'
-    - 'wol'
+      utilities:
+      - age
+      - agrep
+      #- bitwarden-cli
+      - fastfetch
+      - glow
+      #- inxi
+      - kcron
+      - qalculate-qt
+      - starship
+      - tealdeer
+      - wol
+      - kitty
+      #- DisplayCAL
 
-    # system
-    - 'bup'
-    - 'kitty'
-    - 'kup-backup'
-    - 'opentabletdriver'
-    - 'par2'
-    - 'plymouth-kcm'
-    - 'python-pyxattr'
+      externalApps:
+      #- flatseal
+      #- distrobox
+      - swtpm
+      - edk2-ovmf
+      - bridge-utils
+      - virtiofsd
+      #- waydroid
 
-    # documents
-    - 'zim'
+      customization:
+      #- openrgb
+      - plasma-oxygen
+      - plasma-smart-video-wallpaper-reborn
+      - plasma-union
+      - plymouth-kcm
+      #- quickshell
 
-    # web
-    - 'thunderbird'
-    - 'ktorrent'
-    - 'vesktop'
-    - 'nheko'
-    #- 'signal-desktop'
+      backups:
+      - kup-backup
+      ## dependecies ##
+      - bup
+      - par2
+      - python-pyxattr
 
-    # development
-    - 'gh'
-    - 'kate'
-    - 'zed'
-    - 'libtree-sitter-cpp'
-    - 'nodejs-bash-language-server'
-    - 'clang-devel'
-    - 'mock'
+      files:
+      - krename
+      - meld
+      - rclone
+      - syncthing
+      - syncthingfileitemaction-qt6
+      - syncthingplasmoid-qt6
+      - syncthingtray-qt6
+      - yazi
+      - zim
+      #- filezilla
 
-    # fonts adobe-source-han-serif-jp-fonts adobe-source-han-sans-jp-fonts adobe-source-han-code-jp-fonts firacode-nerd-fonts julietaula-montserrat-fonts vernnobile-oswald-fonts lato-fonts fontsquirrel-crete-round-fonts impallari-raleway-fonts google-roboto-fonts tlwg-purisa-fonts steinberg-petalumascript-fonts opendyslexic-fonts dejavu-fonts-all
+      web:
+      #- discord
+      - thunderbird
+      - ktorrent
+      - vesktop
+      - nheko
+      #- signal-desktop
+      #- postybird
+
+      dev:
+      - clang-devel
+      #- git-crypt
+      - gh
+      - kate
+      - libtree-sitter-cpp
+      #- mock
+      - neovim
+      - nodejs-bash-language-server
+      - zed
+
+      repoless:
+      - appimagelauncher
+      #- winboat
+      #- upscayl
+      - rustdesk
+      #- blockbench
+
+      fonts:
+      - adobe-source-han-code-jp-fonts
+      - adobe-source-han-sans-jp-fonts
+      - adobe-source-han-serif-jp-fonts
+      - dejavu-fonts-all
+      - firacode-nerd-fonts
+      - fontsquirrel-crete-round-fonts
+      - google-roboto-fonts
+      - impallari-raleway-fonts
+      - julietaula-montserrat-fonts
+      - lato-fonts
+      - opendyslexic-fonts
+      - steinberg-petalumascript-fonts
+      - tlwg-purisa-fonts
+      - vernnobile-oswald-fonts
 
     delete:
     - dragon
@@ -105,10 +179,19 @@ packages:
     - kpat
     - kwrite
     - neochat
+    - kcalc
 
     appimage:
     - freecad
     - logseq
+    - moonlight
+    - orcaslicer
+    - drawpile
+    - azahar
+    - beeref
+    - loselesscut
+    - opengoal
+    - tinywii-backup-manager
 
     dnfRepo:
     - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
@@ -120,7 +203,7 @@ packages:
     copr:
     - "lizardbyte/stable" # Sunshine
     - "errornointernet/quickshell"
-    - "ilyaz/LACT"
+    #- "ilyaz/LACT"
     - "luwxs/input-actions-editor"
 
   addons:
