@@ -1,20 +1,31 @@
 packages:
   fedora:
     groups:
-    - nvidia   # for Nvidia systems
-    - backups  # for Main systems
-    - other    # temporal
-    - games    # for Power systems
-    - externalApps # for Power systems
-    - creation
-    - dev
-    - files
-    - fonts
-    - media
-    - customization
-    - repoless
-    - utilities
-    - web
+      akaiyoga:
+      - creation
+      - dev
+      - files
+      - fonts
+      - media
+      - customization
+      - repoless
+      - utilities
+      - web
+      katana:
+      - nvidia       # for Nvidia systems
+      - backups      # for Main systems
+      - other        # temporal
+      - games        # for Power systems
+      - externalApps # for Power systems
+      - creation
+      - dev
+      - files
+      - fonts
+      - media
+      - customization
+      - repoless
+      - utilities
+      - web
 
     rpm:
       nvidia:
@@ -39,16 +50,18 @@ packages:
       #- godot
       - inkscape
       #- kdenlive
-      #- scribus
       - krita
       - obs
+      #- scribus
 
       media:
       #- audacity
+      #- calibre
       - exiftool
       - ffmpeg
-      #- isoimagewriter
       - handbrake-gui
+      - isoimagewriter
+      #- kooha
       - kontrast
       - optiimage
       - pdftk
@@ -61,8 +74,6 @@ packages:
       - deno
       - libva-utils
       - vdpauinfo
-      #- calibre
-      #- kooha
 
       games:
       - steam
@@ -81,23 +92,24 @@ packages:
       - age
       - agrep
       #- bitwarden-cli
+      - createrepo_c
+      #- DisplayCAL
       - fastfetch
       - glow
       #- inxi
       - kcron
+      - kitty
       - qalculate-qt
       - starship
       - tealdeer
       - wol
-      - kitty
-      #- DisplayCAL
 
       externalApps:
-      #- flatseal
-      #- distrobox
-      - swtpm
-      - edk2-ovmf
       - bridge-utils
+      #- distrobox
+      #- flatseal
+      - edk2-ovmf
+      - swtpm
       - virtiofsd
       #- waydroid
 
@@ -117,6 +129,7 @@ packages:
       - python-pyxattr
 
       files:
+      #- filezilla
       - krename
       - meld
       - rclone
@@ -126,16 +139,15 @@ packages:
       - syncthingtray-qt6
       - yazi
       - zim
-      #- filezilla
 
       web:
       #- discord
-      - thunderbird
       - ktorrent
-      - vesktop
       - nheko
-      #- signal-desktop
       #- postybird
+      #- signal-desktop
+      - thunderbird
+      - vesktop
 
       dev:
       - clang-devel
@@ -150,10 +162,10 @@ packages:
 
       repoless:
       - appimagelauncher
-      #- winboat
-      #- upscayl
-      - rustdesk
       #- blockbench
+      - rustdesk
+      #- upscayl
+      #- winboat
 
       fonts:
       - adobe-source-han-code-jp-fonts
@@ -173,24 +185,25 @@ packages:
 
     delete:
     - dragon
-    - gwenview
+    - ibus
+    - kcalc
     - kmahjongg
     - kmines
     - kpat
     - kwrite
     - neochat
-    - kcalc
 
     appimage:
-    - freecad
-    - logseq
-    - moonlight
-    - orcaslicer
-    - drawpile
     - azahar
     - beeref
+    - drawpile
+    - freecad
+    - logseq
     - loselesscut
+    - moonlight
     - opengoal
+    - melonDS
+    - orcaslicer
     - tinywii-backup-manager
 
     dnfRepo:

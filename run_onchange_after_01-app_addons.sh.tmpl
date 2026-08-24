@@ -1,0 +1,11 @@
+{{ if eq .chezmoi.osRelease.id "fedora" -}}
+#!/usr/bin/env bash
+
+# git clone https://github.com/stuffmatic/fSpy-Blender
+# git clone https://github.com/stuffmatic/fSpy
+
+blender --command extension sync
+blender --command extension install {{ join "," .packages.addons.blender | quote }}
+{{- end }}
+
+echo -e "Tip: Get Blender LTS 4.2 for Collada import at: \nhttps://www.blender.org/download/release/Blender4.2/blender-4.2.23-linux-x64.tar.xz\n"

@@ -1,0 +1,20 @@
+{{ if eq .chezmoi.osRelease.id "fedora" -}}
+#!/usr/bin/env bash
+
+# Variable that sets the system
+	# Katana
+	{{- $system := .packages.fedora.groups.katana -}}
+	# Akai Yoga
+	{{- if eq .chezmoi.hostname "akai-yoga" -}}
+	{{- $system = .packages.fedora.groups.akaiyoga -}}
+	{{- end }}
+
+sudo dnf install --allowerasing{{- range $group := $system }}
+	{{- range $package := index $.packages.fedora.rpm $group -}}
+		{{ printf " %s" $package }}
+	{{- end }}
+{{- end }}
+
+sudo dnf remove {{ join " " .packages.fedora.delete }}
+sudo dnf autoremove
+{{- end }}
