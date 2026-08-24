@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=Network;InstantMessaging;
+Comment=Vesktop is a cross platform desktop app aiming to give you a snappier Discord experience with Vencord pre-installed
+Exec=/usr/bin/vesktop
+GenericName=Discord Client
+Icon=/home/zorib/.local/share/icons/hicolor/scalable/apps/discord_blurple.svg
+Keywords=discord;vesktop;vencord;shelter;armcord;electron;
+Name=Vencord
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+StartupWMClass=vesktop
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

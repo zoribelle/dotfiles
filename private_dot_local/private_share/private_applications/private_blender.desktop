@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=Graphics;3DGraphics;
+Comment=3D modeling, animation, rendering and post-production
+Exec=blender %f
+GenericName=3D Suite
+Icon=blender
+Keywords=3d;cg;modeling;animation;painting;sculpting;texturing;video editing;video tracking;rendering;render engine;cycles;python;
+MimeType=application/x-blender;
+Name=Blender
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=true
+StartupNotify=true
+StartupWMClass=Blender
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

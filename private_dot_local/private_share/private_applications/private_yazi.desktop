@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=System;FileManager;FileTools;ConsoleOnly
+Comment=Blazing fast terminal file manager written in Rust, based on async I/O
+Exec=yazi %f
+GenericName=Console File Manager
+Icon=/home/zorib/.local/share/icons/hicolor/1024x1024/apps/yazi-logo.png
+Keywords=File;Manager;Explorer;Browser;Launcher
+MimeType=inode/directory
+Name=Yazi File Manager
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+Terminal=true
+TerminalOptions=
+TryExec=yazi
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

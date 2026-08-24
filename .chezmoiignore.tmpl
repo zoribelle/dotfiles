@@ -1,4 +1,5 @@
 README.md
+run_onchange_before_0A-makedirs.sh
 .local/share/applications/org.kde.krita.desktop
 {{ if eq .chezmoi.hostname "akai-yoga" -}}
 # Not required for the Akai Yoga machine
@@ -8,14 +9,13 @@ README.md
 .local/share/applications
 .local/share/dolphin-emu
 Applications/Lutris
+
 # ToDo templates
-run_onchange_after_00-fedora_installPKGs.sh
 .config/kdeconnect
 .config/kdeglobals
-.config/kglobalshortcutsrc
 .config/kuprc
 .config/kwinrc
 .config/mimeapps.list
 .config/plasma-org.kde.plasma.desktop-appletsrc
-.config/powerdevilrc
+.config/rustdesk
 {{- end }}

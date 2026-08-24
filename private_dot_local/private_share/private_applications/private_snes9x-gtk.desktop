@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=Game;Emulator;
+Comment=A Super Nintendo emulator
+Exec=snes9x-gtk %F
+GenericName=SNES Emulator
+Icon=snes9x
+MimeType=application/vnd.nintendo.snes.rom;application/x-snes-rom;
+Name=Snes9x
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

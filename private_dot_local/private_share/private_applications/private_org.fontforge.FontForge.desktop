@@ -1,0 +1,21 @@
+[Desktop Entry]
+Categories=Graphics;X-Fedora;
+Comment=A font editor for outline and bitmap fonts
+Exec=fontforge %U
+GenericName=Font Editor
+Icon=org.fontforge.FontForge
+Keywords=font;fonts;editor;TTF;OTF;typeface;
+MimeType=application/vnd.font-fontforge-sfd;application/x-font-ttf;application/x-font-otf;application/x-font-type1;application/x-font-bdf;application/x-font-pcf;application/x-font-tex;application/font-woff;font/otf;font/ttf;font/woff;font/woff2;
+Name=FontForge
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+StartupWMClass=fontforge
+Terminal=false
+TerminalOptions=
+TryExec=fontforge
+Type=Application
+X-Desktop-File-Install-Version=0.28
+X-KDE-SubstituteUID=false
+X-KDE-Username=

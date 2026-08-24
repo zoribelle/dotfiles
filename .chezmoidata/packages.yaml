@@ -71,6 +71,7 @@ packages:
       - vulkan
       - yt-dlp
       ## dependencies ##
+      - dav1d
       - deno
       - libva-utils
       - vdpauinfo
@@ -105,6 +106,8 @@ packages:
       - wol
 
       externalApps:
+      - "@virtualization"
+      #- bottles
       - bridge-utils
       #- distrobox
       #- flatseal

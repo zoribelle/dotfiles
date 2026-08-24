@@ -1,0 +1,17 @@
+[Desktop Entry]
+Categories=Game;Emulator;
+Comment=Dolphin is a Gamecube, Wii and Triforce (the arcade machine based on theGamecube) emulator
+Exec=dolphin-emu
+GenericName=Wii/GameCube Emulator
+Icon=dolphin-emu
+Name=Dolphin Emulator
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-KDE-SubstituteUID=false
+X-KDE-Username=

@@ -1,0 +1,18 @@
+[Desktop Entry]
+Categories=Utility;
+Comment=Manage Flatpak permissions
+Exec=com.github.tchx84.Flatseal
+GenericName=Flatpak Manager
+Icon=com.github.tchx84.Flatseal
+Keywords=seal;sandbox;override;
+Name=Flatseal
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+X-Purism-FormFactor=Workstation;Mobile;

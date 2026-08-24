@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=Development;IDE;
+Comment=Multi-platform 2D and 3D game engine with a feature-rich editor
+Exec=godot %f
+GenericName=Game Engine
+Icon=godot
+Keywords=game development;development;IDE;game engine;
+MimeType=application/x-godot-project;
+Name=Godot
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+StartupWMClass=Godot
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

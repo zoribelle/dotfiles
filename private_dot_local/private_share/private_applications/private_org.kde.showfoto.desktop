@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=Qt;Graphics;Photography;
+Comment=Manage your photographs like a professional
+Exec=showfoto -qwindowtitle %c %U
+GenericName=Photo Viewer and Editor
+Icon=showfoto
+MimeType=image/gif;image/x-xpixmap;image/x-xbitmap;image/jpeg;image/png;image/tiff;image/x-bmp;image/x-psd;image/x-portable-bitmap;image/x-portable-pixmap;image/x-portable-graymap;image/x-dcraw;image/heif;image/heic;
+Name=showFoto
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+StartupWMClass=showfoto
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DocPath=showfoto/index.html
+X-KDE-SubstituteUID=false
+X-KDE-Username=

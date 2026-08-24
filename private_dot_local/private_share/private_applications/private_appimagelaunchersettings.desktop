@@ -1,0 +1,19 @@
+[Desktop Entry]
+Categories=Settings;DesktopSettings;X-XFCE-SettingsDialog;X-XFCE-PersonalSettings;X-GNOME-PersonalSettings;
+Comment=Change settings for AppImageLauncher
+Exec=AppImageLauncherSettings %f
+GenericName=AppImage Integration
+Icon=AppImageLauncher
+Name=AppImageLauncher Settings
+NoDisplay=false
+Path=
+PrefersNonDefaultGPU=false
+StartupNotify=true
+StartupWMClass=AppImageLauncher
+Terminal=false
+TerminalOptions=
+Type=Application
+Version=1.0
+X-AppImage-Integrate=false
+X-KDE-SubstituteUID=false
+X-KDE-Username=
