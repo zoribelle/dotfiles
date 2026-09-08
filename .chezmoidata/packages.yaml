@@ -201,7 +201,7 @@ packages:
     - neochat
 
     appimage:
-    - azahar
+    - azahar-enhanced
     - beeref
     - drawpile
     - eden
@@ -210,9 +210,9 @@ packages:
     - losslesscut
     - moonlight
     - opengoal
-    - melonDS
+    - melonds-enhanced
     - orcaslicer
-    - tinywii-backup-manager
+    #- tinywii-backup-manager
 
     dnfRepo:
     - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"

@@ -6,7 +6,7 @@ repo_files=(
 "/etc/yum.repos.d/zoetools.repo"
 "/etc/yum.repos.d/rpmfusion-free.repo"
 "/etc/yum.repos.d/terra.repo"
-"https://download.opensuse.org/repositories/home:/mkittler/Fedora_44/home:mkittler.repo"
+"/etc/yum.repos.d/home:mkittler.repo"
 )
 
 # RPM Fusion
