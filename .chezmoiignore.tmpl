@@ -1,8 +1,12 @@
 README.md
-run_onchange_before_0A-makedirs.sh
+# ToDo Global
+.config/discoverrc
+.config/kwinrc
 .local/share/applications/org.kde.krita.desktop
+run_onchange_before_0A-makedirs.sh
+
+# Akai Yoga ignored
 {{ if eq .chezmoi.hostname "akai-yoga" -}}
-# Not required for the Akai Yoga machine
 .config/OpenTabletDriver
 .config/dolphin-emu
 .config/rpcs3
@@ -10,11 +14,10 @@ run_onchange_before_0A-makedirs.sh
 .local/share/dolphin-emu
 Applications/Lutris
 
-# ToDo templates
+# ToDo Akai Yoga
 .config/kdeconnect
 .config/kdeglobals
 .config/kuprc
-.config/kwinrc
 .config/mimeapps.list
 .config/plasma-org.kde.plasma.desktop-appletsrc
 .config/rustdesk

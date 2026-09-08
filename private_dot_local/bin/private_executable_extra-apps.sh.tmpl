@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Enviroment
+path_rpm="$HOME/Applications/Local-Repo"
+
+# RPM
+#   Programs goes in these associative arrays as Github ["User/Repo"]="filename"
+#   Some repos will fetch the latest stable instead of the newest builds
+
+declare -A rpm_github=(
+    ["JannisX11/blockbench"]="Blockbench*.rpm"
+    ["TibixDev/winboat"]="winboat*x86_64.rpm"
+    #["TheAssassin/AppImageLauncher"]="appimagelauncher*x86_64.rpm"
+    ["upscayl/upscayl"]="upscayl*.rpm"
+    ["rustdesk/rustdesk"]="rustdesk*x86_64.rpm"
+    ["mvdicarlo/postybirb"]="PostyBirb-*x86_64.rpm"
+    ["dnfui/dnf-ui"]="dnf-ui-*.x86_64.rpm"
+)
+
+# Fetch RPM
+for rpm_fetch in "${!rpm_github[@]}"; do
+	release_json=$(gh release list -R "$rpm_fetch" --limit 1 --json tagName -q '.[0].tagName');
+	echo -e "${rpm_fetch#*/} is:\t\t $release_json";
+done
+
+# Download RPM
+for rpm_get in "${!rpm_github[@]}"; do
+	echo "Downloading RPM from https://github.com/${rpm_get}/";
+	gh release download -R "$rpm_get" --pattern "${rpm_github[$rpm_get]}" -D "$path_rpm/Packages/" --skip-existing && echo "Completed" ||
+	echo "Failed to get $rpm_get" >&2;
+done
+
+echo -e "\nUpdating Zoe local repo."
+createrepo "$path_rpm" && dnf clean all
+exit 0

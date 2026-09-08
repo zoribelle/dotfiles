@@ -8,7 +8,7 @@ packages:
       - fonts
       - media
       - customization
-      - repoless
+      #- repoless
       - utilities
       - web
       katana:
@@ -23,7 +23,7 @@ packages:
       - fonts
       - media
       - customization
-      - repoless
+      #- repoless
       - utilities
       - web
 
@@ -38,7 +38,7 @@ packages:
       other:
       - opentabletdriver
       - qview
-      - sunshine
+      #- sunshine
 
       creation:
       #- ardour9
@@ -133,6 +133,7 @@ packages:
 
       files:
       #- filezilla
+      - kio-snapshot
       - krename
       - meld
       - rclone
@@ -144,13 +145,13 @@ packages:
       - zim
 
       web:
-      #- discord
+      - discord
       - ktorrent
       - nheko
       #- postybird
       #- signal-desktop
       - thunderbird
-      - vesktop
+      #- vesktop
 
       dev:
       - clang-devel
@@ -164,8 +165,9 @@ packages:
       - zed
 
       repoless:
-      - appimagelauncher
+      #- appimagelauncher
       #- blockbench
+      - dnf-ui
       - rustdesk
       #- upscayl
       #- winboat
@@ -185,6 +187,8 @@ packages:
       - steinberg-petalumascript-fonts
       - tlwg-purisa-fonts
       - vernnobile-oswald-fonts
+      # Missing
+      #- serafettin-cartoon-fonts
 
     delete:
     - dragon
@@ -200,9 +204,10 @@ packages:
     - azahar
     - beeref
     - drawpile
+    - eden
     - freecad
     - logseq
-    - loselesscut
+    - losslesscut
     - moonlight
     - opengoal
     - melonDS
@@ -220,7 +225,7 @@ packages:
     - "lizardbyte/stable" # Sunshine
     - "errornointernet/quickshell"
     #- "ilyaz/LACT"
-    - "luwxs/input-actions-editor"
+    #- "luwxs/input-actions-editor"
 
   addons:
     blender:

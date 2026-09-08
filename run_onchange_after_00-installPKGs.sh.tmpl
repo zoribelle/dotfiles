@@ -17,4 +17,15 @@ sudo dnf install --allowerasing{{- range $group := $system }}
 
 sudo dnf remove {{ join " " .packages.fedora.delete }}
 sudo dnf autoremove
+
+# installs Appman for Appimages
+
+installer=$(mktemp)
+
+curl -fsSL "https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER" \
+-o          "$installer" && \
+chmod +x    "$installer" && "$installer" --install appman && \
+rm -f       "$installer"
+
+appman_location="$HOME/Application/AppImages" appman install {{ join " " .packages.fedora.appimage }}
 {{- end }}
