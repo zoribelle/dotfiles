@@ -13,10 +13,9 @@ packages:
       - web
       katana:
       - nvidia       # for Nvidia systems
-      - backups      # for Main systems
       - other        # temporal
       - games        # for Power systems
-      - externalApps # for Power systems
+      - external     # for Power systems
       - creation
       - dev
       - files
@@ -37,12 +36,12 @@ packages:
 
       other:
       - opentabletdriver
-      - qview
       #- sunshine
 
       creation:
       #- ardour9
       - blender
+      #- blockbench
       - darktable
       - digikam
       - fontforge
@@ -58,7 +57,7 @@ packages:
       #- audacity
       #- calibre
       - exiftool
-      - ffmpeg
+      - ffmpeg dav1d
       - handbrake-gui
       - isoimagewriter
       #- kooha
@@ -67,14 +66,10 @@ packages:
       - pdftk
       - picard
       - puddletag
+      - qview
       - vlc
-      - vulkan
-      - yt-dlp
-      ## dependencies ##
-      - dav1d
-      - deno
-      - libva-utils
-      - vdpauinfo
+      - vulkan libva-utils vdpauinfo
+      - yt-dlp deno
 
       games:
       - steam
@@ -103,38 +98,37 @@ packages:
       - qalculate-qt
       - starship
       - tealdeer
+      - waydroid
+      - waydroid-helper vte291-gtk4 python3-httpx python3-aiofiles
+      # Run for quick init:
+      # waydroid init -c https://ota.waydro.id/system -v https://ota.waydro.id/vendor
       - wol
 
-      externalApps:
+      external:
       - "@virtualization"
-      #- bottles
+      - bottles
       - bridge-utils
       #- distrobox
       #- flatseal
       - edk2-ovmf
       - swtpm
       - virtiofsd
-      #- waydroid
 
       customization:
+      - fcitx5-mozc kcm-fcitx5
       #- openrgb
       - plasma-oxygen
       - plasma-smart-video-wallpaper-reborn
       - plasma-union
       - plymouth-kcm
       #- quickshell
-
-      backups:
-      - kup-backup
-      ## dependecies ##
-      - bup
-      - par2
-      - python-pyxattr
+      - sl
 
       files:
       #- filezilla
       - kio-snapshot
       - krename
+      - kup-backup bup par2 python-pyxattr
       - meld
       - rclone
       - syncthing
@@ -166,7 +160,6 @@ packages:
 
       repoless:
       #- appimagelauncher
-      #- blockbench
       - dnf-ui
       - rustdesk
       #- upscayl
@@ -176,6 +169,8 @@ packages:
       - adobe-source-han-code-jp-fonts
       - adobe-source-han-sans-jp-fonts
       - adobe-source-han-serif-jp-fonts
+      - ipa-exgothic-fonts
+      - ipa-exmincho-fonts
       - dejavu-fonts-all
       - firacode-nerd-fonts
       - fontsquirrel-crete-round-fonts
@@ -183,6 +178,7 @@ packages:
       - impallari-raleway-fonts
       - julietaula-montserrat-fonts
       - lato-fonts
+      - mini-wakuwaku-fonts
       - opendyslexic-fonts
       - steinberg-petalumascript-fonts
       - tlwg-purisa-fonts
@@ -199,20 +195,24 @@ packages:
     - kpat
     - kwrite
     - neochat
+    - fedora-bookmarks
 
     appimage:
     - azahar-enhanced
     - beeref
     - drawpile
+    #- dusklight
     - eden
     - freecad
     - logseq
     - losslesscut
     - moonlight
+    #- nx-optimizer
     - opengoal
     - melonds-enhanced
     - orcaslicer
     #- tinywii-backup-manager
+    #- wiiu-downloader
 
     dnfRepo:
     - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm"
