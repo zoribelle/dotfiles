@@ -125,6 +125,7 @@ packages:
       - sl
 
       files:
+      - chezmoi
       #- filezilla
       - kio-snapshot
       - krename
@@ -201,11 +202,11 @@ packages:
     - azahar-enhanced
     - beeref
     - drawpile
-    #- dusklight
+    - dusklight
     - eden
     - freecad
     - logseq
-    - losslesscut
+    - lossless-cut
     - moonlight
     #- nx-optimizer
     - opengoal
