@@ -1,33 +1,63 @@
 #!/usr/bin/env bash
+#set -euo pipefail
 
-# Enviroment
-path_rpm="$HOME/Applications/Local-Repo"
+# declare -A rpm_github=(
+    # ["TibixDev/winboat"]="winboat*x86_64.rpm"
+    # ["TheAssassin/AppImageLauncher"]="appimagelauncher*x86_64.rpm"
+    # ["upscayl/upscayl"]="upscayl*.rpm"
+    # ["rustdesk/rustdesk"]="rustdesk*x86_64.rpm"
+    # ["mvdicarlo/postybirb"]="PostyBirb-*x86_64.rpm"
+    # ["dnfui/dnf-ui"]="dnf-ui-*.x86_64.rpm"
+# )
 
-# RPM
-#   Programs goes in these associative arrays as Github ["User/Repo"]="filename"
+# Fetch RPMs
+#for rpm_fetch in "${!rpm_github[@]}"; do
+#	release_json=$(gh release list -R "$rpm_fetch" --limit 1 --json tagName -q '.[0].tagName');
+#	echo -e "${rpm_fetch#*/} is:\t\t $release_json";
+#done
+
+# Download RPMs
+# for rpm_get in "${!rpm_github[@]}"; do
+	# echo "Downloading RPM from https://github.com/${rpm_get}/"
+
+	# gh release download
+	#   --repo       "$rpm_get"
+	#   --pattern    "${rpm_github[$rpm_get]}"
+	#   --dir        "$path_rpm/Packages/"
+	#   --skip-existing
+	# && echo "Completed"
+	# || echo "Failed to get $rpm_get" >&2;
+# done
+
+# Download RPMs
+#   Applications goes in these associative arrays as Github ["User/Repo"]="version"
 #   Some repos will fetch the latest stable instead of the newest builds
-declare -A rpm_github=(
-    ["TibixDev/winboat"]="winboat*x86_64.rpm"
-    #["TheAssassin/AppImageLauncher"]="appimagelauncher*x86_64.rpm"
-    ["upscayl/upscayl"]="upscayl*.rpm"
-    ["rustdesk/rustdesk"]="rustdesk*x86_64.rpm"
-    ["mvdicarlo/postybirb"]="PostyBirb-*x86_64.rpm"
-    ["dnfui/dnf-ui"]="dnf-ui-*.x86_64.rpm"
+
+declare -A domain_repo=(
+    ["TibixDev/winboat"]="{{ (gitHubLatestRelease "TibixDev/winboat").TagName }}"
+    # ["TheAssassin/AppImageLauncher"]="{{ (gitHubLatestRelease "TheAssassin/AppImageLauncher").TagName }}"
+    ["upscayl/upscayl"]="{{ (gitHubLatestRelease "upscayl/upscayl").TagName }}"
+    ["rustdesk/rustdesk"]="{{ (gitHubLatestRelease "rustdesk/rustdesk").TagName }}"
+    # ["mvdicarlo/postybirb"]="{{ (gitHubLatestRelease "mvdicarlo/postybirb").TagName }}"
+    ["dnfui/dnf-ui"]="{{ (gitHubLatestRelease "dnfui/dnf-ui").TagName }}"
 )
 
-# Fetch RPM
-for rpm_fetch in "${!rpm_github[@]}"; do
-	release_json=$(gh release list -R "$rpm_fetch" --limit 1 --json tagName -q '.[0].tagName');
-	echo -e "${rpm_fetch#*/} is:\t\t $release_json";
+rpm_path="$HOME/Applications/Local-Repo"
+for rpm_get in "${!domain_repo[@]}"; do
+	echo "Downloading RPM from https://github.com/${rpm_get}/"
+
+	gh release download \
+	    --repo     "$rpm_get" \
+	    --pattern  "*.rpm" \
+	    --dir      "${rpm_path}/Packages/" \
+	    --skip-existing \
+	&& echo "Version ${domain_repo[${rpm_get}]} Completed" \
+	|| echo "Failed to get $rpm_get" >&2;
 done
 
-# Download RPM
-for rpm_get in "${!rpm_github[@]}"; do
-	echo "Downloading RPM from https://github.com/${rpm_get}/";
-	gh release download -R "$rpm_get" --pattern "${rpm_github[$rpm_get]}" -D "$path_rpm/Packages/" --skip-existing && echo "Completed" ||
-	echo "Failed to get $rpm_get" >&2;
-done
-
+# Signs packages and updates the repo database
 echo -e "\nUpdating Zoe local repo."
-createrepo "$path_rpm" && dnf clean all
+# rpm --delsign "${rpm_path}"/Packages/*.rpm
+rpm --addsign "${rpm_path}"/Packages/*.rpm
+createrepo "${rpm_path}" && dnf clean all
 exit 0

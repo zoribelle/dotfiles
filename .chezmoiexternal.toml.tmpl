@@ -1,0 +1,63 @@
+# Externally Managed Reference:
+# https://www.chezmoi.io/reference/special-files/chezmoiexternal-format/
+
+# Fonts
+[".local/share/fonts/monocraft"]
+    type = "file"
+    url = "https://github.com/IdreesInc/Monocraft/releases/download/{{ (gitHubLatestRelease "IdreesInc/Monocraft").TagName }}/Monocraft.ttc"
+    refreshPeriod = "168h"
+
+[".local/share/fonts/libron"]
+    type = "archive"
+    url = "https://github.com/nicoverbruggen/libron/releases/download/{{ (gitHubLatestRelease "nicoverbruggen/libron").TagName }}/Libron_H.zip"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+
+# Krita Plugins
+# [".local/share/krita/pykrita/arrange2"]
+    # type = "archive"
+    # url = "https://github.com/Cellosia/krita-arrange-2/archive/master.tar.gz"
+    # exact = true
+    # stripComponents = 1
+#
+# [".local/share/krita/pykrita/shortcut_composer"]
+    # type = "archive"
+    # url = "https://github.com/wojtryb/Shortcut-Composer/archive/master.tar.gz"
+    # exact = true
+    # stripComponents = 1
+    # refreshPeriod = "168h"
+#
+# [".local/share/krita/pykrita/tile_grid"]
+    # type = "archive"
+    # url = "https://github.com/madjyc/Krita_Tile_Grid_Plugin/archive/master.tar.gz"
+    # exact = true
+    # stripComponents = 1
+#
+# [".local/share/krita/pykrita/compositionhelper"]
+    # type = "archive"
+    # url = "https://codeberg.org/Grum999/CompositionHelper/archive/main.tar.gz"
+    # exact = true
+    # stripComponents = 1
+#
+# [".local/share/krita/pykrita/theme_creator"]
+    # type = "archive"
+    # url = "https://invent.kde.org/freyalupen/theme-creator-extension/-/archive/master/theme-creator-extension-master.tar.gz?ref_type=heads"
+    # exact = true
+    # stripComponents = 1
+
+# Blender Addons
+# [".config/blender/5.2/extensions/user_default/fspy_blender"]
+    # type = "archive"
+    # url = "https://github.com/onatbas/fSpy-Blender/archive/master.tar.gz"
+    # exact = true
+    # stripComponents = 1
+    # upstream
+    # url = "https://github.com/stuffmatic/fSpy-Blender"
+
+# ["fSpy"]
+    # url = "https://github.com/stuffmatic/fSpy"
+
+# ["Blender 4.2 LTS for Collada Import"]
+    # type = "archive"
+    # url = "https://www.blender.org/download/release/Blender4.2/blender-4.2.23-linux-x64.tar.xz"

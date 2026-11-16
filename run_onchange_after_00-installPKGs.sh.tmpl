@@ -1,25 +1,48 @@
 {{ if eq .chezmoi.osRelease.id "fedora" -}}
 #!/usr/bin/env bash
+#set -euo pipefail
 
-# Variable that sets the system
-	# Katana
-	{{- $system := .packages.fedora.groups.katana -}}
-	# Akai Yoga
-	{{- if eq .chezmoi.hostname "akai-yoga" -}}
+# Variables sets per machine [Go Template]
+# Katana
+{{ $system := .packages.fedora.groups.katana -}}
+
+# Akai Yoga
+{{- if eq .chezmoi.hostname "akai-yoga" -}}
 	{{- $system = .packages.fedora.groups.akaiyoga -}}
-	{{- end }}
+{{- end }}
 
+#   Main packages install
 sudo dnf install --allowerasing{{- range $group := $system }}
 	{{- range $package := index $.packages.fedora.rpm $group -}}
 		{{ printf " %s" $package }}
 	{{- end }}
 {{- end }}
 
+
+#   Nvidia post-install actions
+{{ if eq .chezmoi.hostname "katana" -}}
+#	The kernel module is compiled under the hood and takes some minutes, use this printing until the kernel module is done compiling
+#   pgrep kmod
+
+sudo dnf mark user akmod-nvidia
+#	Prevents DNF uninstalling necessary nvidia dependencies when using "autoremove", generally already marked as "user"
+
+sudo systemctl enable nvidia-{suspend,resume,hibernate}
+#	[xorg-x11-drv-nvidia-power] experimental suspend deamon support by Nvidia (package from 2021)
+#	optionally edit /etc/modprobe.d/nvidia.conf
+#       "nvidia options NVreg_TemporaryFilePath=/var/tmp"
+#	if you have issue with /tmp as tmpFS is used for nvidia suspend
+
+# Extra notes:
+#	Disable kernel parameter of the nvidia KMS module and use the Nouveau fallback
+#		'nvidia-drm.modeset=0'
+{{- end }}
+
+#   Removes preinstalled packages that aren't needed
 sudo dnf remove {{ join " " .packages.fedora.delete }}
 sudo dnf autoremove
 
-# installs Appman for Appimages
-
+#   installs Appman for Appimages
 installer=$(mktemp)
 
 curl -fsSL "https://raw.githubusercontent.com/ivan-hc/AM/main/AM-INSTALLER" \
@@ -28,4 +51,6 @@ chmod +x    "$installer" && "$installer" --install appman && \
 rm -f       "$installer"
 
 appman install {{ join " " .packages.fedora.appimage }}
+
+#    End of Template
 {{- end }}

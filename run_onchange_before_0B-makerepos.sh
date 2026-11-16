@@ -2,11 +2,14 @@
 #set -euo pipefail
 
 # Enable external repos
+repo_path="/usr/share/dnf5/repos.d"
+#repo_path="/etc/yum.repos.d"
+
 repo_files=(
-"/etc/yum.repos.d/zoetools.repo"
-"/etc/yum.repos.d/rpmfusion-free.repo"
-"/etc/yum.repos.d/terra.repo"
-"/etc/yum.repos.d/home:mkittler.repo"
+"${repo_path}/zoetools.repo"
+"${repo_path}/rpmfusion-free.repo"
+"${repo_path}/terra.repo"
+"${repo_path}/home:mkittler.repo"
 )
 
 # RPM Fusion
@@ -27,22 +30,23 @@ sudo dnf -y config-manager addrepo --from-repofile="https://download.opensuse.or
 }
 
 # Local Repo for RPMs unavailable in remote repos
+path_local="${HOME}/Applications/Local-Repo"
 
 [[ -e "${repo_files[0]}" ]] || {
 	echo "Creating a local repo."
 
-sudo tee "/etc/yum.repos.d/zoetools.repo" <<EOF
+sudo tee "${repo_path}/zoetools.repo" <<EOF
 [zoribtools]
 name = "Zorib's Tools Repo"
-baseurl = file://"${HOME}/Applications/Local-Repo"
-gpgcheck = 0
+baseurl = file://"${path_local}"
+gpgcheck = 1
 enabled = 1
+gpgkey = file://"${path_local}/rpm-repo-gpgkey"
 EOF
 
-	createrepo "$HOME/Applications/Local-Repo/"
+    rpm --delsign "${path_local}/Packages/*.rpm"
+    rpm --addsign "${path_local}/Packages/*.rpm"
+	createrepo "${path_local}"
 }
 
-#sudo dnf -y copr enable "lizardbyte/stable" # Sunshine
-#sudo dnf -y copr enable "errornointernet/quickshell"
-#sudo dnf -y copr enable "ilyaz/LACT"
-#sudo dnf -y copr enable "luwxs/input-actions-editor"
+#sudo dnf -y copr enable

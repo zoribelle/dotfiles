@@ -13,7 +13,6 @@ packages:
       - web
       katana:
       - nvidia       # for Nvidia systems
-      - other        # temporal
       - games        # for Power systems
       - external     # for Power systems
       - creation
@@ -22,7 +21,6 @@ packages:
       - fonts
       - media
       - customization
-      #- repoless
       - utilities
       - web
 
@@ -30,21 +28,19 @@ packages:
       nvidia:
       - akmod-nvidia
       - libva-nvidia-driver
+      - opentabletdriver
       - xorg-x11-drv-nvidia-cuda
       - xorg-x11-drv-nvidia-cuda-libs
       - xorg-x11-drv-nvidia-power
 
-      other:
-      - opentabletdriver
-      #- sunshine
-
       creation:
       #- ardour9
       - blender
+      #- blender-luxcorerender.noarch
       #- blockbench
       - darktable
       - digikam
-      - fontforge
+      #- fontforge
       #- gimp
       #- godot
       - inkscape
@@ -68,7 +64,7 @@ packages:
       - puddletag
       - qview
       - vlc
-      - vulkan libva-utils vdpauinfo
+      - vulkan libva-utils
       - yt-dlp deno
 
       games:
@@ -76,13 +72,14 @@ packages:
       #- lutris
       - gamemode
       - mangohud
-      - prismlauncher
+      #- prismlauncher
       - protonplus
+      #- sunshine
       ## emulation ##
       - dolphin-emu
       #- mednafen
       - rpcs3
-      - snes9x-gtk
+      #- snes9x-gtk
 
       utilities:
       - age
@@ -91,11 +88,13 @@ packages:
       - createrepo_c
       #- DisplayCAL
       - fastfetch
+      #- flatseal
       - glow
       #- inxi
       - kcron
       - kitty
       - qalculate-qt
+      - rpm-sign
       - starship
       - tealdeer
       - waydroid
@@ -107,9 +106,9 @@ packages:
       - bottles
       - bridge-utils
       #- distrobox
-      #- flatseal
       - edk2-ovmf
       - swtpm
+      - prime-run
       - virtiofsd
 
       customization:
@@ -134,33 +133,36 @@ packages:
       - syncthingfileitemaction-qt6
       - syncthingplasmoid-qt6
       - syncthingtray-qt6
-      - yazi
+      #- yazi
       - zim
 
       web:
       - discord
       - ktorrent
+      - mozilla-ublock-origin
       - nheko
       #- postybird
       #- signal-desktop
       - thunderbird
       #- vesktop
+      #- zen-browser
 
       dev:
       - clang-devel
+      - git
       #- git-crypt
       - gh
-      - kate
+      #- kate
       - libtree-sitter-cpp
       #- mock
       - neovim
-      - nodejs-bash-language-server
+      - shellcheck
       - zed
 
       repoless:
       #- appimagelauncher
-      - dnf-ui
-      - rustdesk
+      #- dnf-ui
+      #- rustdesk
       #- upscayl
       #- winboat
 
@@ -187,29 +189,30 @@ packages:
 
     delete:
     - dragon
+    #- firefox
     - ibus
     - kcalc
     - kmahjongg
     - kmines
     - kpat
-    - kwrite
+    #- kwrite
     - neochat
     - fedora-bookmarks
 
     appimage:
     - azahar-enhanced
     - beeref
-    - drawpile
+    #- drawpile
     - dusklight
     - eden
     - freecad
     - logseq
     - lossless-cut
-    - moonlight
+    #- moonlight
     #- nx-optimizer
     - opengoal
     - melonds-enhanced
-    - orcaslicer
+    #- orcaslicer
     #- tinywii-backup-manager
     #- wiiu-downloader
 
@@ -221,28 +224,27 @@ packages:
     - "https://download.opensuse.org/repositories/home:/mkittler/Fedora_$(rpm -E %fedora)/home:mkittler.repo"
 
     copr:
-    - "lizardbyte/stable" # Sunshine
-    - "errornointernet/quickshell"
-    #- "ilyaz/LACT"
+    #- "lizardbyte/stable" # Sunshine
     #- "luwxs/input-actions-editor"
 
   addons:
     blender:
-    - "EdgeFlow"
-    - "PolyQuilt_Fork"
     - "auto_mirror"
     - "auto_reload"
     - "bone_widget"
     - "brushstroke_tools"
     - "curve_tools"
+    - "EdgeFlow"
     - "extra_curve_objectes"
     - "f2"
     - "looptools"
     - "magic_uv"
     - "measureit"
     - "mio3_uv"
+    - "PolyQuilt_Fork"
+    - "real-time-paths"
     - "simple_renaming_panel"
     krita:
-    - "Cellosia/krita-arrange-2"
-    - "madjyc/Krita_Tile_Grid_Plugin"
-    - "wojtryb/Shortcut-Composer"
+    #- "Cellosia/krita-arrange-2"
+    #- "madjyc/Krita_Tile_Grid_Plugin"
+    #- "wojtryb/Shortcut-Composer"
